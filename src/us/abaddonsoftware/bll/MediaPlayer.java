@@ -32,7 +32,7 @@ public class MediaPlayer
     
         if(isPlaying) { stopSong(); }
         if(getCurrentSong() != null)
-        {
+        { 
         isPlaying = true;//this seems to work but isAlive is not modified by stop
         }
     }
