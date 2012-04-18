@@ -16,12 +16,17 @@ public class Library {
     List<Song> songs;
     
     public Library(){
-        songs = new ArrayList<Song>();
+        songs = new ArrayList<>();
     }
     
     
-    public void addSong(Song songToAdd){
-        songs.add(songToAdd);
+    public boolean addSong(Song songToAdd){
+        if(!songExists(songToAdd)){
+           songs.add(songToAdd);
+           return true;
+        }
+         return false;   
+        
                
     }
     public void removeSong(Song songToRemove){
@@ -30,6 +35,10 @@ public class Library {
     
     public int songCount(){
         return songs.size();
+        
+    }
+    public boolean songExists(Song songToCheck){
+        return songs.contains(songToCheck);
         
     }
             
